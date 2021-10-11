@@ -1,0 +1,149 @@
+@-ms-viewport {
+    width: device-width;
+}
+
+@viewport {
+    width: device-width;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    background-color: rgb(83, 83, 83);
+    min-width: 250px;
+    max-width: 1440px;
+    max-height: 1080px;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+.header-block {
+    background-color: rgb(255, 49, 93);
+    padding: 3rem;
+    text-align: center;
+    font-size: 45px;
+}
+
+.one {
+    font-weight: 400;
+    padding: 1rem;
+    width: 60.5%;
+    background-color: rgb(221, 116, 241);
+    color: black;
+}
+
+.two {
+    font-weight: 400;
+    padding: 1rem;
+    width: 39.5%;
+    background-color: rgb(75, 219, 207);
+    color: rgb(0, 0, 0);
+}
+
+.navbar {
+    display: block;
+    background-color: rgb(230, 107, 70);
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    flex: 1;
+    text-align: center;
+}
+
+.navbar a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    color: black;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+[aria-controls="header-nav"] {
+    display: none;
+}
+
+@media screen and (max-width: 440px){
+    .container {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+
+    .header-block {
+        padding: 1.5rem;
+    }
+
+    .navbar {
+        position: relative;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .navbar li {
+        padding: 0;
+        border-bottom: 1px solid rgb(0, 0, 0);
+    }
+
+    .navbar button {
+        position: absolute;
+        top: -1.3rem;
+    }
+
+    .one, .two {
+        width: 100%;
+    }
+
+    [aria-controls="header-nav"] {
+        display: block;
+    }
+    .navbar ul {
+        display: none;
+    }
+
+    [aria-expanded="true"]~ul {
+        display: block;
+    }
+
+    [aria-expanded="false"] .closed {
+        display: none;
+    }
+
+    [aria-expanded="true"] .closed {
+        display: inline-block;
+    }
+
+    [aria-expanded="true"] .open {
+        display: none;
+    }
+}
+
